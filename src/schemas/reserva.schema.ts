@@ -13,9 +13,12 @@ export class Reserva {
   cancha: string;
 
   @Prop({ required: true })
-  fecha: Date;
+  fechaInicio: Date;
 
-  @Prop()
+  @Prop({ required: true })
+  fechaFin: Date;
+
+  @Prop({ default: 'pendiente' })
   estado: string; // pendiente, confirmada, cancelada
 }
 
