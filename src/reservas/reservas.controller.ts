@@ -1,5 +1,5 @@
 // src/reservas/reservas.controller.ts
-import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Body, Param, Patch } from '@nestjs/common';
 import { ReservasService } from './reservas.service';
 import { Reserva } from '../schemas/reserva.schema';
 
@@ -31,4 +31,10 @@ export class ReservasController {
   remove(@Param('id') id: string) {
     return this.reservasService.remove(id);
   }
+// se agrega pacth para confirmar la reserva
+  @Patch(':id/confirmar')
+  confirmarReserva(@Param('id') id: string) {
+    return this.reservasService.confirmarReserva(id);
+  }
+  //fin 
 }
